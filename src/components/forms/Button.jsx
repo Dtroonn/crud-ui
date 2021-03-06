@@ -13,7 +13,7 @@ const StyledButton = styled.button`
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	min-width: 106px;
+	min-width: 54px;
 	padding: 0 10px;
 	height: 32px;
 	background: ${({ theme }) => theme.colors.purple};
@@ -32,6 +32,19 @@ const StyledButton = styled.button`
 		green &&
 		css`
 			background: ${({ theme }) => theme.colors.green};
+		`}
+
+	${({ fw }) =>
+		fw &&
+		css`
+			width: 100%;
+		`}
+
+	${({ disable }) =>
+		disable &&
+		css`
+			opacity: 0.5;
+			pointer-events: none;
 		`}
 `;
 
