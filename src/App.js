@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import axios from "axios";
 
 import { axiosInstance } from "./core";
 
@@ -40,7 +39,7 @@ const App = () => {
 
   const handleUpdateRecord = React.useCallback(async (id, data) => {
     try {
-      const response = await axiosInstance.post(`${id}`, { data: data });
+      await axiosInstance.post(`${id}`, { data: data });
       dispatch(updateRecord(id, data));
     } catch (e) {
       setSomeError(e.message);
@@ -50,7 +49,7 @@ const App = () => {
 
   const handleRemoveRecord = React.useCallback(async (id) => {
     try {
-      const response = await axiosInstance.delete(`${id}`);
+      await axiosInstance.delete(`${id}`);
       dispatch(removeRecord(id));
     } catch (e) {
       setSomeError(e.message);

@@ -1,7 +1,6 @@
 import React from "react";
 
 import {
-	StyledTitle,
 	StyledTable,
 	StyledHeadrow,
 	StyledBody,
