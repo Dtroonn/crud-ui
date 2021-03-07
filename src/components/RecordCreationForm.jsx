@@ -9,10 +9,14 @@ const RecordCreationForm = React.memo(({ onCreateRecordSubmit, ...props }) => {
 	const [isButtonDisabled, setIsButtonDisabled] = React.useState(false);
 
 	const onFormSubmit = async (data) => {
-		setIsButtonDisabled(true);
-		await onCreateRecordSubmit(data);
-		setIsButtonDisabled(false);
-		reset();
+		try {
+			setIsButtonDisabled(true);
+			await onCreateRecordSubmit(data);
+			setIsButtonDisabled(false);
+			reset();
+		} catch (e) {
+			setIsButtonDisabled(false);
+		}
 	};
 	return (
 		<StyledForm onSubmit={handleSubmit(onFormSubmit)} {...props}>

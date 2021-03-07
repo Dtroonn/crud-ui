@@ -63,6 +63,7 @@ const App = () => {
       dispatch(addRecord(response.data));
     } catch (e) {
       setSomeError(e.message);
+      throw e;
     }
   }, []);
 
