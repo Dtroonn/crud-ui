@@ -79,6 +79,25 @@ const App = () => {
     );
   }
 
+  //BACK-END РАЗРАБАТЫВАЛ НЕ Я. ЕГО ПОМЕНЯЛИ И ТАБЛИЧКА СЕЙЧАС НЕ РАБОТАЕТ
+  if (true) {
+    return (
+      <StyledAppWrapper>
+        <Container>
+          <StyledAttentionBlock>
+            <StyledTitle>
+              Back-end разрабатывал не я. Его поменяли и табличка сейчас не
+              работает. Но код можно посмотреть здесь{" "}
+              <a href="https://github.com/Dtroonn/crud-ui" target="_blank">
+                https://github.com/Dtroonn/crud-ui
+              </a>
+            </StyledTitle>
+          </StyledAttentionBlock>
+        </Container>
+      </StyledAppWrapper>
+    );
+  }
+
   return (
     <StyledAppWrapper>
       <Container>
@@ -119,6 +138,16 @@ const StyledTitle = styled.div`
   font-size: 32px;
   text-align: center;
   margin: 0 0 25px 0;
+  a {
+    color: #f00;
+  }
+`;
+
+const StyledAttentionBlock = styled.div`
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export default App;
